@@ -1,0 +1,22 @@
+<h3>Show only 1 sponsor in the footer</h3>
+
+{{ range where (where .Site.Pages "Section" "sponsor") ".Params.is_lead" "==" true }}
+  <ul>
+    <li>Permalink: {{ .Permalink }}</li>
+    <li>Slug: {{ .Slug }}</li>
+    <li>URL: {{ .URL }}</li>
+    <li>Section: {{ .Section }}</li>
+  </ul>
+  <p>
+    <b>This sponsor in JSON format:</b> {{ . | jsonify }}
+  </p>
+{{ end }}
+
+<div class="footer">
+    <div class="pure-menu pure-menu-horizontal pure-menu-open">
+        <ul>
+            <li>Powered by <a class="hugo" href="https://gohugo.io/" target="_blank">hugo</a></li>
+        </ul>
+    </div>
+</div>
+<script src="{{ .Site.BaseURL }}/js/all.min.js"></script>
