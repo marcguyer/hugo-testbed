@@ -10,6 +10,8 @@
   <p>
     <b>This sponsor in JSON format:</b> {{ . | jsonify }}
   </p>
+  <!-- this sponsor's logo -->
+  <img src="{{ .Slug }}/logo.jpg">
 {{ end }}
 
 <div class="footer">
